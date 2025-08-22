@@ -19,8 +19,8 @@ import { getTranslateLanguageFromConfig } from "./utils/language-utils";
 const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 
 export const siteConfig: SiteConfig = {
-	title: "Mizuki",
-	subtitle: "One demo website",
+	title: "傲轩的小窝",
+	subtitle: "Ciallo～(∠・ω< )⌒★",
 
 	lang: SITE_LANG,
 
@@ -50,6 +50,7 @@ export const siteConfig: SiteConfig = {
 				"assets/desktop-banner/5.webp",
 				"assets/desktop-banner/6.webp",
 				"assets/desktop-banner/7.webp",
+                "assets/desktop-banner/8.webp",
 			], // 桌面横幅图片
 			mobile: [
 				"assets/mobile-banner/1.webp",
@@ -67,11 +68,11 @@ export const siteConfig: SiteConfig = {
 		carousel: {
 			enable: true, // 为 true 时：为多张图片启用轮播。为 false 时：从数组中随机显示一张图片
 
-			interval: 1, // 轮播间隔时间（秒）
+			interval: 3, // 轮播间隔时间（秒）
 		},
 
 		homeText: {
-			enable: true, // 在主页显示自定义文本
+			enable: false, // 在主页显示自定义文本
 			title: "Mizuki", // 主页横幅主标题
 
 			subtitle: [
@@ -121,19 +122,14 @@ export const navBarConfig: NavBarConfig = {
 			children: [
 				{
 					name: "GitHub",
-					url: "https://github.com/matsuzaka-yuki/Mizuki",
+					url: "https://github.com/ClozyA",
 					external: true,
 				},
 				{
 					name: "Bilibili",
-					url: "https://space.bilibili.com/701864046",
+					url: "https://space.bilibili.com/52391971",
 					external: true,
-				},
-				{
-					name: "Gitee",
-					url: "https://gitee.com/matsuzakayuki/Mizuki",
-					external: true,
-				},
+				}
 			],
 		},
 		{
@@ -168,19 +164,19 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/avatar.jpg", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
-	name: "Mizuki",
-	bio: "这是一个描述",
+	avatar: "assets/images/avatar.jpg", // Relative to /src directory. If starts with '/', relative to /public directory
+	name: "傲轩丶",
+	bio: "Ciallo～(∠・ω< )⌒★",
 	links: [
 		{
 			name: "Bilibli",
 			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/701864046",
+			url: "https://space.bilibili.com/52391971",
 		},
 		{
-			name: "Gitee",
-			icon: "mdi:git",
-			url: "https://gitee.com/matsuzakayuki",
+			name: "Steam",
+			icon: "mdi:steam",
+			url: "https://steamcommunity.com/id/aoxuan/",
 		},
 		{
 			name: "GitHub",
@@ -190,8 +186,8 @@ export const profileConfig: ProfileConfig = {
 	],
 	// Umami统计部份，记得在layout插入Umami的head标签
 	umami: {
-		enable: false, // 是否显示umami统计
-		shareId: "", //填入共享URL最后面那一串  比如：https://eu.umami.is/api/share/2dKQ5T0WrUn6AYtr 你就填入2dKQ5T0WrUn6AYtr
+		enable: true, // 是否显示umami统计
+		shareId: "ZzJvCSKLUqRCnelA", //填入共享URL最后面那一串  比如：https://eu.umami.is/api/share/2dKQ5T0WrUn6AYtr 你就填入2dKQ5T0WrUn6AYtr
 		region: "eu", //Umami有两个区域，按需选择即可  比如：https://eu.umami.is 你就填入eu
 	},
 };
@@ -216,15 +212,15 @@ export const commentConfig: CommentConfig = {
 };
 
 export const announcementConfig: AnnouncementConfig = {
-	title: "公告", // 公告标题
-	content: "欢迎来到我的博客！这是一个示例公告。", // 公告内容
-	closable: true, // 允许用户关闭公告
-	link: {
-		enable: true, // 启用链接
-		text: "了解更多", // 链接文本
-		url: "/about/", // 链接 URL
-		external: false, // 内部链接
-	},
+	title: "公告", // Announcement title
+	content: "不定时更新~", // Announcement content
+	closable: false, // Allow users to close the announcement
+	// link: {
+	// 	enable: true, // Enable link
+	// 	text: "Learn More", // Link text
+	// 	url: "/about/", // Link URL
+	// 	external: false, // Internal link
+	// },
 };
 
 export const musicPlayerConfig: MusicPlayerConfig = {
@@ -232,7 +228,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 };
 
 export const footerConfig: FooterConfig = {
-	enable: false, // 是否启用Footer HTML注入功能
+	enable: true, // 是否启用Footer HTML注入功能
 };
 
 // 直接编辑 FooterConfig.html 文件来添加备案号等自定义内容
