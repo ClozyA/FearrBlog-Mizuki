@@ -132,34 +132,34 @@ export const navBarConfig: NavBarConfig = {
 				}
 			],
 		},
-		{
-			name: "我的",
-			url: "/content/",
-			children: [LinkPreset.Anime, LinkPreset.Diary, LinkPreset.Gallery],
-		},
+		// {
+		// 	name: "我的",
+		// 	url: "/content/",
+		// 	children: [LinkPreset.Anime, LinkPreset.Diary, LinkPreset.Gallery],
+		// },
 		{
 			name: "关于",
 			url: "/content/",
 			children: [LinkPreset.About, LinkPreset.Friends],
 		},
-		{
-			name: "其他",
-			url: "#",
-			children: [
-				{
-					name: "项目展示",
-					url: "/projects/",
-				},
-				{
-					name: "技能展示",
-					url: "/skills/",
-				},
-				{
-					name: "时间线",
-					url: "/timeline/",
-				},
-			],
-		},
+		// {
+		// 	name: "其他",
+		// 	url: "#",
+		// 	children: [
+		// 		{
+		// 			name: "项目展示",
+		// 			url: "/projects/",
+		// 		},
+		// 		{
+		// 			name: "技能展示",
+		// 			url: "/skills/",
+		// 		},
+		// 		{
+		// 			name: "时间线",
+		// 			url: "/timeline/",
+		// 		},
+		// 	],
+		// },
 	],
 };
 
