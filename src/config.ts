@@ -188,7 +188,7 @@ export const siteConfig: SiteConfig = {
 		enable: true, // 启用目录功能
 		mode: "sidebar", // 目录显示模式："float" 悬浮按钮模式，"sidebar" 侧边栏模式
 		depth: 2, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
-		useJapaneseBadge: true, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
+		useJapaneseBadge: false, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
 	},
 	showCoverInContent: true, // 在文章内容页显示文章封面
 	generateOgImages: false, // 启用生成OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
@@ -201,26 +201,26 @@ export const siteConfig: SiteConfig = {
 		// }
 	],
 
-	// 字体配置
-	font: {
-		// 注意：自定义字体需要在 src/styles/main.css 中引入字体文件
-		// 注意：字体子集优化功能目前仅支持 TTF 格式字体,开启后需要在生产环境才能看到效果,在Dev环境下显示的是浏览器默认字体!
-		asciiFont: {
-			// 英文字体 - 优先级最高
-			// 指定为英文字体则无论字体包含多大范围，都只会保留 ASCII 字符子集
-			fontFamily: "ZenMaruGothic-Medium",
-			fontWeight: "400",
-			localFonts: ["ZenMaruGothic-Medium.ttf"],
-			enableCompress: true, // 启用字体子集优化，减少字体文件大小
-		},
-		cjkFont: {
-			// 中日韩字体 - 作为回退字体
-			fontFamily: "萝莉体 第二版",
-			fontWeight: "500",
-			localFonts: ["萝莉体 第二版.ttf"],
-			enableCompress: true, // 启用字体子集优化，减少字体文件大小
-		},
-	},
+	// // 字体配置
+	// font: {
+	// 	// 注意：自定义字体需要在 src/styles/main.css 中引入字体文件
+	// 	// 注意：字体子集优化功能目前仅支持 TTF 格式字体,开启后需要在生产环境才能看到效果,在Dev环境下显示的是浏览器默认字体!
+	// 	asciiFont: {
+	// 		// 英文字体 - 优先级最高
+	// 		// 指定为英文字体则无论字体包含多大范围，都只会保留 ASCII 字符子集
+	// 		fontFamily: "ZenMaruGothic-Medium",
+	// 		fontWeight: "400",
+	// 		localFonts: ["ZenMaruGothic-Medium.ttf"],
+	// 		enableCompress: true, // 启用字体子集优化，减少字体文件大小
+	// 	},
+	// 	cjkFont: {
+	// 		// 中日韩字体 - 作为回退字体
+	// 		fontFamily: "萝莉体 第二版",
+	// 		fontWeight: "500",
+	// 		localFonts: ["萝莉体 第二版.ttf"],
+	// 		enableCompress: true, // 启用字体子集优化，减少字体文件大小
+	// 	},
+	// },
 	showLastModified: true, // 控制“上次编辑”卡片显示的开关
 };
 export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
