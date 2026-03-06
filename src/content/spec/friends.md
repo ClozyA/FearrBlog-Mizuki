@@ -1,8 +1,9 @@
-{
-id: 1,
-title: "Astro",
-imgurl: "https://avatars.githubusercontent.com/u/44914786?v=4&s=640",
-desc: "The web framework for content-driven websites",
-siteurl: "https://github.com/withastro/astro",
-tags: ["Framework"],
-},
+欢迎交换友链。
+
+如果你想添加站点，请提供这些信息：
+
+- 站点名称
+- 站点简介
+- 站点链接
+- 头像或 Logo 地址
+- 标签
