@@ -14,20 +14,12 @@ export interface FriendItem {
 export const friendsData: FriendItem[] = [
 	{
 		id: 1,
-		title: "GitHub",
-		imgurl: "https://avatars.githubusercontent.com/u/9919?v=4&s=640",
-		desc: "Where the world builds software",
-		siteurl: "https://github.com",
-		tags: ["Development", "Platform"],
-	},
-	{
-		id: 2,
-		title: "GitHub",
-		imgurl: "https://avatars.githubusercontent.com/u/9919?v=4&s=640",
-		desc: "Where the world builds software",
-		siteurl: "https://github.com",
-		tags: ["Development", "Platform"],
-	},
+		title: "TomyJan",
+		imgurl: "https://public-cdn.tomys.top/head.png",
+		desc: "一只菜的要死还每天不努力只知道bbll娱乐至死的废柴",
+		siteurl: "https://blog.tomys.top/",
+		tags: ["友链"],
+	}
 ];
 
 // 获取所有友情链接数据
