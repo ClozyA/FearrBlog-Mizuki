@@ -35,6 +35,10 @@ import { remarkEscapeNumericColons } from "./src/plugins/remark-escape-numeric-c
 import { remarkFixGithubAdmonitions } from "./src/plugins/remark-fix-github-admonitions.js";
 import { remarkMermaid } from "./src/plugins/remark-mermaid.js";
 
+const disabledFeaturePaths = Object.entries(siteConfig.featurePages)
+	.filter(([, enabled]) => !enabled)
+	.map(([name]) => "/" + (name === "aiTools" ? "ai-tools" : name) + "/");
+
 // https://astro.build/config
 export default defineConfig({
 	fonts: [
@@ -180,7 +184,18 @@ export default defineConfig({
 		svelte({
 			preprocess: vitePreprocess(),
 		}),
-		sitemap(),
+		sitemap({
+			filter: (page) => {
+				const pathname = new URL(page).pathname;
+				return (
+					!pathname.startsWith("/api/") &&
+					!pathname.startsWith("/og/") &&
+					pathname !== "/404/" &&
+					pathname !== "/404.html" &&
+					!disabledFeaturePaths.some((path) => pathname.startsWith(path))
+				);
+			},
+		}),
 		mdx(),
 	],
 	markdown: {

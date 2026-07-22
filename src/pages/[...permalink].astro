@@ -85,6 +85,8 @@ const publicDescription = getPostPublicDescription(
 	entry.data.title,
 );
 
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
+
 const jsonLd = {
 	"@context": "https://schema.org",
 	"@type": "BlogPosting",
@@ -97,6 +99,9 @@ const jsonLd = {
 		url: Astro.site,
 	},
 	datePublished: formatDateToYYYYMMDD(entry.data.published),
+	dateModified: formatDateToYYYYMMDD(entry.data.updated || entry.data.published),
+	url: canonicalUrl,
+	mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
 	inLanguage: entry.data.lang
 		? entry.data.lang.replace("_", "-")
 		: siteConfig.lang.replace("_", "-"),
@@ -115,6 +120,8 @@ const jsonLd = {
 	category={entry.data.category || undefined}
 	wordCount={remarkPluginFrontmatter.words}
 >
+	<meta slot="head" property="article:published_time" content={entry.data.published.toISOString()} />
+	<meta slot="head" property="article:modified_time" content={(entry.data.updated || entry.data.published).toISOString()} />
 	<script
 		is:inline
 		slot="head"

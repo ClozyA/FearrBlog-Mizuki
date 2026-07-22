@@ -30,6 +30,7 @@ interface Props {
 	setOGTypeArticle?: boolean;
 	postSlug?: string;
 	coverImage?: string;
+	noindex?: boolean;
 }
 
 let {
@@ -40,6 +41,7 @@ let {
 	setOGTypeArticle,
 	postSlug,
 	coverImage,
+	noindex,
 } = Astro.props;
 
 // defines global css variables
@@ -181,6 +183,7 @@ const bannerOffset =
 			description={description}
 			ogImageUrl={ogImageUrl}
 			setOGTypeArticle={setOGTypeArticle}
+			noindex={noindex}
 			configHue={configHue}
 		/>
 
