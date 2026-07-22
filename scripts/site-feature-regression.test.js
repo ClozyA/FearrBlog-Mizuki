@@ -40,3 +40,23 @@ test("keeps personalized pages and safe upstream synchronization", () => {
 		/reset --hard|push --force origin HEAD:publish/,
 	);
 });
+test("build output contains enabled pages and separated legacy posts", () => {
+	if (!existsSync("dist")) return;
+
+	assert.equal(existsSync("dist/diary/index.html"), true);
+	assert.equal(existsSync("dist/friends/index.html"), true);
+	const home = read("dist/index.html");
+	assert.equal(home.includes('href="/diary/"'), true);
+	assert.equal(home.includes('href="/friends/"'), true);
+	assert.equal(existsSync("dist/posts/git命令/index.html"), true);
+	assert.equal(
+		existsSync("dist/posts/ant-design-pro-无法使用umi-ui解决办法/index.html"),
+		true,
+	);
+	assert.equal(
+		existsSync(
+			"dist/posts/基于docker-compose搭建teamspeak服务器/index.html",
+		),
+		true,
+	);
+});
