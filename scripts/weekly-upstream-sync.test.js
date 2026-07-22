@@ -34,15 +34,28 @@ test("weekly sync validates with the production content repository before pushin
 	assert.match(workflow, /ENABLE_CONTENT_SYNC:\s*["']true["']/);
 	assert.match(workflow, /CONTENT_REPO_URL:\s*https:\/\/github\.com\/ClozyA\/FearrBlog-Content\.git/);
 	assert.match(workflow, /CONTENT_DIR:\s*\.\/content/);
+	const buildIndex = workflow.indexOf("pnpm build");
+	const postBuildTestIndex = workflow.indexOf("pnpm test", buildIndex);
+	assert.ok(postBuildTestIndex > buildIndex, "build output tests must run after build");
 });
 
-test("weekly sync lease-protects master and never force-pushes publish", async () => {
+test("weekly sync atomically lease-protects master and never force-pushes publish", async () => {
 	const workflow = await loadWorkflow();
-	const masterPush = workflow.split("\n").find((line) => line.includes("refs/heads/master"));
-	const publishPush = workflow.split("\n").find((line) => line.includes("HEAD:publish"));
-	assert.ok(masterPush?.includes("--force-with-lease"));
-	assert.ok(publishPush, "publish push command is required");
-	assert.doesNotMatch(publishPush, /--force/);
+	const pushLines = workflow
+		.split("\n")
+		.filter((line) => line.trimStart().startsWith("git push"));
+	assert.equal(pushLines.length, 1, "validated branches must use one push transaction");
+	assert.match(pushLines[0], /git push --atomic/);
+	assert.match(workflow, /UPSTREAM_SHA:refs\/heads\/master/);
+	assert.match(workflow, /HEAD:refs\/heads\/publish/);
+	assert.match(
+		workflow,
+		/--force-with-lease=refs\/heads\/master:\$ORIGIN_MASTER_SHA/,
+	);
+	assert.doesNotMatch(
+		workflow,
+		/--force-with-lease=refs\/heads\/publish|--force origin HEAD:refs\/heads\/publish/,
+	);
 });
 
 test("weekly sync reports failures without opening duplicate issues", async () => {

@@ -67,12 +67,14 @@ jobs:
       - name: Build production site
         run: pnpm build
 
+      - name: Verify production output
+        run: pnpm test
+
       - name: Push validated branches
         shell: bash
         run: |
           set -euo pipefail
-          git push origin "$UPSTREAM_SHA:refs/heads/master" "--force-with-lease=refs/heads/master:$ORIGIN_MASTER_SHA"
-          git push origin HEAD:publish
+          git push --atomic origin "$UPSTREAM_SHA:refs/heads/master" "HEAD:refs/heads/publish" "--force-with-lease=refs/heads/master:$ORIGIN_MASTER_SHA"
 
       - name: Report failure
         if: failure()
