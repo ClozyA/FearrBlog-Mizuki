@@ -6,23 +6,6 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		{
-			name: "My",
-			url: "/content/",
-			icon: "material-symbols:person",
-			children: [
-				{
-					name: "Diary",
-					url: "/diary/",
-					icon: "material-symbols:book",
-				},
-				{
-					name: "Friends",
-					url: "/friends/",
-					icon: "material-symbols:group",
-				},
-			],
-		},
-		{
 			name: "Links",
 			url: "/links/",
 			icon: "material-symbols:link",
@@ -38,6 +21,35 @@ export const navBarConfig: NavBarConfig = {
 					url: "https://space.bilibili.com/52391971",
 					external: true,
 					icon: "fa7-brands:bilibili",
+				},
+			],
+		},
+		{
+			name: "My",
+			url: "/content/",
+			icon: "material-symbols:person",
+			children: [
+				{
+					name: "Diary",
+					url: "/diary/",
+					icon: "material-symbols:book",
+				},
+			],
+		},
+		{
+			name: "About",
+			url: "/content/",
+			icon: "material-symbols:info",
+			children: [
+				{
+					name: "About",
+					url: "/about/",
+					icon: "material-symbols:person",
+				},
+				{
+					name: "Friends",
+					url: "/friends/",
+					icon: "material-symbols:group",
 				},
 			],
 		},

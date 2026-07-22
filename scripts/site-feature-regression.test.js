@@ -14,6 +14,7 @@ test("restores the legacy visible feature configuration", () => {
 	assert.match(site, /friends:\s*true/);
 	assert.equal(nav.includes('url: "/diary/"'), true);
 	assert.equal(nav.includes('url: "/friends/"'), true);
+	assert.equal(nav.includes('url: "/about/"'), true);
 	assert.match(music, /mode:\s*["']meting["']/);
 	assert.equal(music.includes("https://www.bilibili.uno/api"), true);
 	assert.match(pio, /enable:\s*false/);
@@ -48,6 +49,7 @@ test("build output contains enabled pages and separated legacy posts", () => {
 	const home = read("dist/index.html");
 	assert.equal(home.includes('href="/diary/"'), true);
 	assert.equal(home.includes('href="/friends/"'), true);
+	assert.equal(home.includes('href="/about/"'), true);
 	assert.equal(existsSync("dist/posts/git命令/index.html"), true);
 	assert.equal(
 		existsSync("dist/posts/ant-design-pro-无法使用umi-ui解决办法/index.html"),
