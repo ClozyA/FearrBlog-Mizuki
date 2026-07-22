@@ -14,7 +14,7 @@ test("weekly sync has the approved schedule permissions and runtime", async () =
 	assert.match(workflow, /workflow_dispatch:/);
 	assert.match(workflow, /contents:\s*write/);
 	assert.match(workflow, /issues:\s*write/);
-	assert.match(workflow, /node-version:\s*["']22\.11\.0["']/);
+	assert.match(workflow, /node-version:\s*["']22\.14\.0["']/);
 });
 
 test("weekly sync validates with the production content repository before pushing", async () => {

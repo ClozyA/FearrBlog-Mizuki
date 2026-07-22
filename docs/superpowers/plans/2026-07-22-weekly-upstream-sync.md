@@ -21,7 +21,7 @@
 - [ ] 创建 `scripts/weekly-upstream-sync.test.js`，读取 `.github/workflows/sync-upstream.yml`，并断言：
   - cron 为 `0 4 * * 1` 且包含 `workflow_dispatch`。
   - 权限包含 `contents: write` 和 `issues: write`。
-  - Node 版本为 `22.11.0`。
+  - Node 版本为 `22.14.0`。
   - 依次出现 `pnpm install --frozen-lockfile`、`pnpm test`、`pnpm check`、`pnpm build`。
   - 包含真实内容仓库三个环境变量。
   - `master` 推送包含 `--force-with-lease`。

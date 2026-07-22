@@ -43,7 +43,7 @@ pnpm check
 pnpm build
 ```
 
-Node.js 固定为 `22.11.0`，与 EdgeOne 当前生产环境一致。验证时启用真实公开内容仓库：
+Node.js 固定为 `22.14.0`，满足 pnpm 11.5.3 的最低 Node.js 要求。验证时启用真实公开内容仓库：
 
 ```text
 ENABLE_CONTENT_SYNC=true
