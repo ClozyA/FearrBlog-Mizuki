@@ -25,7 +25,8 @@ test("keeps personalized pages and safe upstream synchronization", () => {
 	const about = read("src/content/spec/about.md");
 	const workflow = read(".github/workflows/sync-upstream.yml");
 
-	assert.match(friends, /ClozyA|fearr/i);
+	assert.match(friends, /TomyJan/);
+	assert.match(read("src/content/spec/friends.md"), /aoxuan233@gmail\.com/);
 	assert.doesNotMatch(
 		about,
 		/This website is built with the \*\*Astro\*\* framework/,
