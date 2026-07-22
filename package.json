@@ -4,9 +4,10 @@
   "version": "9.0",
   "scripts": {
     "sync-content": "node scripts/sync-content.js",
+    "test": "node --test scripts/content-sync.test.js",
     "init-content": "node scripts/init-content-repo.js",
-    "predev": "node scripts/sync-content.js || true",
-    "prebuild": "node scripts/sync-content.js || true",
+    "predev": "node scripts/sync-content.js",
+    "prebuild": "node scripts/sync-content.js",
     "dev": "astro dev",
     "start": "astro dev",
     "check": "astro check",
