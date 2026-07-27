@@ -132,7 +132,7 @@ const bannerOffsetByPosition = {
 const bannerOffset =
 	bannerOffsetByPosition[siteConfig.banner.position || "center"];
 
-// CSS 变量由 Astro Font API 自动注入，body 字体通过 Tailwind --font-body 应用
+// CSS 变量由 Astro Font API 自动注入，body 字体通过 --font-sans 组合 --font-body 与 --font-cjk 应用
 ---
 
 <!doctype html>
